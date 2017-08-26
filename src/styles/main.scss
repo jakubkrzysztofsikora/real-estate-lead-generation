@@ -1,3 +1,193 @@
-h1.title {
-	color: green;
+@import "~normalize.css/normalize.css";
+@import "font-awesome/font-awesome.scss";
+@import "colors.scss";
+@import "mixins.scss";
+
+$top-header-height: 100px;
+$header-height: 600px;
+$header-content-overlap: 300px;
+$header-content-width: 300px;
+$header-content-background-width: $header-content-width + 100;
+$font-size-for-paragraphs: 20px;
+$bigger-font-size-for-paragraphs: 22px;
+$biggest-font-size-for-paragraphs: 26px;
+
+#main-content {
+	font-family: "Open Sans", sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	
+	*,
+	*::before,
+	*::after {
+		-webkit-box-sizing: inherit;
+		-moz-box-sizing: inherit;
+				box-sizing: inherit;
+	}
+
+	p .paragraph-icon {
+		vertical-align: middle;
+		margin: 5px 30px;
+		color: $main-theme-color;
+	}
+
+	button {
+		border: 0;
+		background: $main-theme-color;
+		color: $foreground-color;
+		padding: 10px 40px;
+	}
+	
+	.wrap-content {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	#website-header {
+		height: $header-height;
+
+		h1 {
+			font-size: 36px;
+		}
+		
+		#header-background {
+			background-image: url("../images/background.jpg");
+			background-attachment: fixed;
+			background-position: bottom;
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+			height: $header-height;
+			position: absolute;
+			z-index: 1000;
+			@include filter(brightness(80%));
+			@include filter(contrast(70%));
+		}
+
+		.header-top, .side-line, .header-content {
+			z-index: 1001;
+			position: relative;
+		}
+
+		.header-top {
+			text-align: center;
+			height: $top-header-height;
+			border-bottom: 2px $foreground-color dashed;
+
+			img {
+				height: $top-header-height / 2;
+				margin: $top-header-height / 4 0;
+			}
+		}
+
+		.side-line {
+			position: fixed;
+			height: 100%;
+			border-left: 2px $main-theme-color dashed;
+			top: 0;
+			right: 5%;
+		}
+
+		.header-content {
+			width: $header-content-width;
+			height: $header-height + $header-content-overlap;
+			margin: 0 auto;
+			position: absolute;
+			left: calc(50% - (#{$header-content-width / 2}));
+
+			.lead-form {
+				color: $foreground-color;
+				z-index: 1002;
+				position: relative;
+
+				.description {
+					margin-top: $header-height / 6;
+					height:($header-height / 6) * 4;
+					font-size: $bigger-font-size-for-paragraphs;
+				}
+
+				.lead-form-content {
+					padding-top: 30px;
+				}
+
+				input, select {
+					display: block;
+					border: none;
+					padding: 10px;
+					margin: 15px auto;
+					width: $header-content-width;
+				}
+
+				button {
+					&:hover {
+						background: $main-theme-lighter-color;
+					}
+
+					display: block;
+					margin: 20px auto;
+					width: $header-content-width;
+					cursor: pointer;
+				}
+			}
+
+			.content-background {
+				width: $header-content-background-width;
+				background: $dark-theme-color;
+				opacity: 0.7;
+				height: 100%;
+				position: absolute;
+				left: calc(50% - (#{$header-content-background-width / 2}));
+				z-index: 1001;
+			}
+
+			.afterFormStatement {
+				color: $foreground-color;
+				font-size: $biggest-font-size-for-paragraphs;
+				text-align: center;
+				margin: 35px 0;
+			}
+		}
+	}
+
+	#post-header {
+		.wrap-content {
+			p {
+				max-width: calc(50% - #{$header-content-background-width / 2});
+				
+				&:nth-last-child(1) {
+					border: 0;
+				}
+	
+				&:nth-child(2n) {
+					font-size: $bigger-font-size-for-paragraphs;
+				}
+			}
+		}
+
+		height: $header-content-overlap + 50;
+		background: $lighter-dark-theme-color;
+		padding: 20px 0;
+		color: $lighter-dark-theme-foreground-color;
+		position: relative;
+
+		p {
+			margin: 0;
+			padding: 20px 0;
+			font-size: $font-size-for-paragraphs;
+			border-bottom: 3px $dark-theme-color solid;
+		}
+
+		.bottom-post-header-slogan {
+			background: $dark-theme-color;
+			position: absolute;
+			bottom: 0;
+			padding: 15px 5%;
+			width: 100%;
+			font-size: $biggest-font-size-for-paragraphs;
+			color: $foreground-color;
+		}
+	}
 }

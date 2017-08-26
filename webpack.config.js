@@ -12,7 +12,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js$/,
+                test: /\.js|jsx$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 query: {
@@ -22,7 +22,15 @@ module.exports = {
 			{
                 test: /\.scss$/,
                 loaders: ExtractTextPlugin.extract('css-loader!sass-loader')
-            }
+			},
+			{
+				test: /\.(jpe?g|png|gif)$/i,
+				loaders: "file-loader?name=/dist/images/[name].[ext]"
+			},
+			{
+				test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
+				loader: 'file-loader?name=/dist/font-awesome/fonts/[name].[ext]'
+			}
         ]
 	},
 	plugins: [
@@ -33,5 +41,8 @@ module.exports = {
 			template: 'index.template.ejs',
 			inject: 'body',
 		  })
-    ]
+	],
+	resolve: {
+		extensions: ['.js', '.jsx'],
+	  },
 }
