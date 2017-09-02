@@ -5,14 +5,23 @@
 
 $top-header-height: 100px;
 $header-height: 600px;
-$header-content-overlap: 300px;
+$header-content-overlap: 350px;
 $header-content-width: 300px;
 $header-content-background-width: $header-content-width + 100;
 $font-size-for-paragraphs: 20px;
 $bigger-font-size-for-paragraphs: 22px;
 $biggest-font-size-for-paragraphs: 26px;
 
+$main-motive-border: 2px $main-theme-color dashed;
+$default-z-index: 1000;
+$wrap-content-full-width: 90%;
+
 #main-content {
+	
+	/*
+		COMMON STUFF
+	*/
+
 	font-family: "Open Sans", sans-serif;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -42,9 +51,40 @@ $biggest-font-size-for-paragraphs: 26px;
 	}
 	
 	.wrap-content {
-		width: 90%;
+		width: $wrap-content-full-width;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	
+	.side-line {
+		position: fixed;
+		height: 100%;
+		border-left: $main-motive-border;
+		top: 0;
+		right: 5%;
+		z-index: $default-z-index + 2;
+	}
+
+	.centered {
+		text-align: center;
 		margin: 0 auto;
 	}
+
+	.righted {
+		text-align: right;
+	}
+
+	.medium-size {
+		width: 60%;
+	}
+
+	.big-size {
+		width: 80%;
+	}
+
+	/* 
+		HEADER STUFF 
+	*/
 
 	#website-header {
 		height: $header-height;
@@ -62,13 +102,13 @@ $biggest-font-size-for-paragraphs: 26px;
 			width: 100%;
 			height: $header-height;
 			position: absolute;
-			z-index: 1000;
+			z-index: $default-z-index;
 			@include filter(brightness(80%));
 			@include filter(contrast(70%));
 		}
 
 		.header-top, .side-line, .header-content {
-			z-index: 1001;
+			z-index: $default-z-index + 1;
 			position: relative;
 		}
 
@@ -83,24 +123,16 @@ $biggest-font-size-for-paragraphs: 26px;
 			}
 		}
 
-		.side-line {
-			position: fixed;
-			height: 100%;
-			border-left: 2px $main-theme-color dashed;
-			top: 0;
-			right: 5%;
-		}
-
 		.header-content {
 			width: $header-content-width;
 			height: $header-height + $header-content-overlap;
 			margin: 0 auto;
 			position: absolute;
-			left: calc(50% - (#{$header-content-width / 2}));
+			left: calc(70% - (#{$header-content-width / 2}));
 
 			.lead-form {
 				color: $foreground-color;
-				z-index: 1002;
+				z-index: $default-z-index + 2;
 				position: relative;
 
 				.description {
@@ -110,7 +142,7 @@ $biggest-font-size-for-paragraphs: 26px;
 				}
 
 				.lead-form-content {
-					padding-top: 30px;
+					padding-top: 15px;
 				}
 
 				input, select {
@@ -127,7 +159,7 @@ $biggest-font-size-for-paragraphs: 26px;
 					}
 
 					display: block;
-					margin: 20px auto;
+					margin: 45px auto;
 					width: $header-content-width;
 					cursor: pointer;
 				}
@@ -140,22 +172,26 @@ $biggest-font-size-for-paragraphs: 26px;
 				height: 100%;
 				position: absolute;
 				left: calc(50% - (#{$header-content-background-width / 2}));
-				z-index: 1001;
+				z-index: $default-z-index + 1;
 			}
 
 			.afterFormStatement {
 				color: $foreground-color;
 				font-size: $biggest-font-size-for-paragraphs;
 				text-align: center;
-				margin: 35px 0;
+				margin: 67px 0;
 			}
 		}
 	}
 
 	#post-header {
 		.wrap-content {
+			$offset-to-the-right: 25%;
+
+			margin-left: $offset-to-the-right;
+			width: $wrap-content-full-width - $offset-to-the-right;
 			p {
-				max-width: calc(50% - #{$header-content-background-width / 2});
+				max-width: calc(70% - #{$header-content-background-width / 2});
 				
 				&:nth-last-child(1) {
 					border: 0;
@@ -167,7 +203,7 @@ $biggest-font-size-for-paragraphs: 26px;
 			}
 		}
 
-		height: $header-content-overlap + 50;
+		height: $header-content-overlap;
 		background: $lighter-dark-theme-color;
 		padding: 20px 0;
 		color: $lighter-dark-theme-foreground-color;
@@ -188,6 +224,83 @@ $biggest-font-size-for-paragraphs: 26px;
 			width: 100%;
 			font-size: $biggest-font-size-for-paragraphs;
 			color: $foreground-color;
+			text-align: center;
+		}
+	}
+
+	/*
+		BLOCKS
+	*/
+
+	.block {
+		margin-top: 150px;
+
+		.block-title {
+			position: relative;
+
+			.line-through {
+				border-bottom: $main-motive-border;
+				width: 100%;
+				position: absolute;
+				top: 50%;
+			}
+
+			h2 {	
+				font-size: 36px;
+				color: $main-theme-color;
+				margin-bottom: 10px;
+	
+				span {
+					margin-top: 10px;
+					display: block;
+				}
+			}
+		}
+
+		.image-block-image {
+			margin-right: 66px;
+		}
+	}
+
+	/*
+		FOOTER STUFF
+	*/
+
+	#website-footer {
+		width: 100%;
+		margin-top: 50px;
+		z-index: $default-z-index + 4;
+
+		.over-footer {
+			padding: 20px 0;
+			background: $dark-theme-color;
+		}
+
+		.footer-content {
+			background: $main-theme-color;
+			color: $foreground-color;
+			padding: 25px 10px;
+			text-align: right;
+
+			.footer-social-element {
+				vertical-align: middle;
+
+				&.with-hover-effect {
+					width: 40px;
+					height: 35px;
+					@include transition(all .2s);
+					
+					&:hover {
+						font-size: 35px;
+					}
+				}
+			}
+
+			
+			
+			a {
+				color: $foreground-color;
+			}
 		}
 	}
 }

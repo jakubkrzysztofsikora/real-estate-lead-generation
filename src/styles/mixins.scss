@@ -4,3 +4,10 @@
 		-ms-filters: $value;
 		filter: $value;
   }
+
+  @mixin transition($value) {
+	-webkit-transition: $value;
+	   -moz-transition: $value;
+		-ms-transition: $value;
+		transition: $value;
+  }

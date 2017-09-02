@@ -6,10 +6,9 @@ export default class Header extends React.Component {
 		return <section id="website-header">
 			<div id="header-background" />
 			<section className="header-top">
-				<img src={logo} />
+				<a href="http://metrorealtyphx.com/"><img src={logo} /></a>
 			</section>
 			<section className="wrap-content">
-				<div className="side-line" />
 				<section className="header-content">
 					<div className="content-background" />
 					<div className="lead-form">
