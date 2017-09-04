@@ -135,17 +135,12 @@ $wrap-content-full-width: 90%;
 			height: $header-height + $header-content-overlap;
 			margin: 0 auto;
 			position: absolute;
-			
-			@media #{$smaller-phones} {
-				width: $header-content-width-small-screen;
-				height: $header-height + $header-content-overlap-medium-small-screen;
-				padding: 30px;
-			}
 
 			@media #{$tablets-and-big-phones} {
 				width: $header-content-width-medium-screen;
 				height: $header-height + $header-content-overlap-medium-small-screen;
 				padding: 30px;
+				padding-bottom: 0;
 			}
 
 			@media #{$regular-screens} {
@@ -158,6 +153,19 @@ $wrap-content-full-width: 90%;
 
 			@media #{$biggest-screens} {
 				left: calc(70% - (#{$header-content-width / 2}));
+			}
+			
+			@media #{$smaller-phones} {
+				width: $header-content-width-small-screen;
+				height: $header-height + $header-content-overlap-medium-small-screen;
+				padding: 30px;
+			}
+
+			@media #{$small-phones} {
+				width: 85%;
+				height: auto;
+				padding: 20px;
+				padding-bottom: 0;
 			}
 
 			.lead-form {
@@ -220,6 +228,11 @@ $wrap-content-full-width: 90%;
 					margin: #{$mail-button-vertical-margin-sum/2} auto;
 					width: $header-content-width;
 					cursor: pointer;
+
+					@media #{$small-phones} {
+						margin: #{$mail-button-vertical-margin-sum/4} auto;
+						margin-bottom: #{($mail-button-vertical-margin-sum/4) - 10};
+					}
 					
 					@media #{$smaller-phones} {
 						width: 100%;
@@ -240,12 +253,12 @@ $wrap-content-full-width: 90%;
 				left: calc(50% - (#{$header-content-background-width / 2}));
 				z-index: $default-z-index + 1;
 				
-				@media #{$smaller-phones} {
+				@media #{$tablets-and-big-phones} {
 					width: 100%;
 					left: 0;
 				}
 				
-				@media #{$tablets-and-big-phones} {
+				@media #{$smaller-phones} {
 					width: 100%;
 					left: 0;
 				}
@@ -282,14 +295,6 @@ $wrap-content-full-width: 90%;
 			padding: 20px 0;
 			color: $lighter-dark-theme-foreground-color;
 			position: relative;
-
-			@media #{$smaller-phones} {
-				padding-top: $mail-button-vertical-margin-sum + 40px + $padding-in-responsive-vertical;
-				margin: 0 auto;
-				width: $wrap-content-full-width;
-				height: auto;
-				padding-bottom: $padding-in-responsive-vertical;
-			}
 			
 			@media #{$tablets-and-big-phones} {
 				padding-top: $mail-button-vertical-margin-sum + 40px + $padding-in-responsive-vertical;
@@ -297,6 +302,22 @@ $wrap-content-full-width: 90%;
 				width: $wrap-content-full-width;
 				height: auto;
 				padding-bottom: $padding-in-responsive-vertical;
+			}
+
+			@media #{$smaller-phones} {
+				padding-top: 35%;
+				margin: 0 auto;
+				width: $wrap-content-full-width;
+				height: auto;
+				padding-bottom: $padding-in-responsive-vertical;
+			}
+			
+			@media #{$small-phones} {
+				padding-top: 150px;
+			}
+			
+			@media #{$small-phones} {
+				padding-top: 300px;
 			}
 
 			p {
@@ -366,6 +387,14 @@ $wrap-content-full-width: 90%;
 	.block {
 		margin-top: 150px;
 
+		@media #{$smaller-phones} {
+			margin-top: 50px;
+		}
+		
+		@media #{$tablets-and-big-phones} {
+			margin-top: 50px;
+		}
+
 		.block-title {
 			position: relative;
 
@@ -384,6 +413,10 @@ $wrap-content-full-width: 90%;
 				span {
 					margin-top: 10px;
 					display: block;
+				}
+
+				@media #{$small-phones} {
+					font-size: 32px;
 				}
 			}
 		}
