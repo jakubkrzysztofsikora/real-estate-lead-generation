@@ -2,15 +2,22 @@
 @import "font-awesome/font-awesome.scss";
 @import "colors.scss";
 @import "mixins.scss";
+@import "media-queries-sizes";
 
 $top-header-height: 100px;
 $header-height: 600px;
 $header-content-overlap: 350px;
+$header-content-overlap-medium-small-screen: 0;
 $header-content-width: 300px;
+$header-content-width-medium-screen: 85%;
+$header-content-width-small-screen: 90%;
 $header-content-background-width: $header-content-width + 100;
+$header-content-background-width-medium-screen: $header-content-width-medium-screen + 100;
+$header-content-background-width-small-screen: $header-content-width-small-screen + 100;
 $font-size-for-paragraphs: 20px;
 $bigger-font-size-for-paragraphs: 22px;
 $biggest-font-size-for-paragraphs: 26px;
+$mail-button-vertical-margin-sum: 90px;
 
 $main-motive-border: 2px $main-theme-color dashed;
 $default-z-index: 1000;
@@ -128,7 +135,30 @@ $wrap-content-full-width: 90%;
 			height: $header-height + $header-content-overlap;
 			margin: 0 auto;
 			position: absolute;
-			left: calc(70% - (#{$header-content-width / 2}));
+			
+			@media #{$smaller-phones} {
+				width: $header-content-width-small-screen;
+				height: $header-height + $header-content-overlap-medium-small-screen;
+				padding: 30px;
+			}
+
+			@media #{$tablets-and-big-phones} {
+				width: $header-content-width-medium-screen;
+				height: $header-height + $header-content-overlap-medium-small-screen;
+				padding: 30px;
+			}
+
+			@media #{$regular-screens} {
+				left: calc(80% - (#{$header-content-width / 2}));
+			}
+			
+			@media #{$almost-full-hd-screens} {
+				left: calc(75% - (#{$header-content-width / 2}));
+			}
+
+			@media #{$biggest-screens} {
+				left: calc(70% - (#{$header-content-width / 2}));
+			}
 
 			.lead-form {
 				color: $foreground-color;
@@ -139,6 +169,26 @@ $wrap-content-full-width: 90%;
 					margin-top: $header-height / 6;
 					height:($header-height / 6) * 4;
 					font-size: $bigger-font-size-for-paragraphs;
+
+					@media #{$smaller-phones} {
+						height: auto;
+						margin-top: 0;
+					}
+		
+					@media #{$tablets-and-big-phones} {
+						height: auto;
+						margin-top: 0;
+					}
+
+					h2 {
+						@media #{$smaller-phones} {
+							text-align: center;
+						}
+			
+						@media #{$tablets-and-big-phones} {
+							text-align: center;
+						}
+					}
 				}
 
 				.lead-form-content {
@@ -151,6 +201,14 @@ $wrap-content-full-width: 90%;
 					padding: 10px;
 					margin: 15px auto;
 					width: $header-content-width;
+
+					@media #{$smaller-phones} {
+						width: 100%;
+					}
+		
+					@media #{$tablets-and-big-phones} {
+						width: 100%;
+					}
 				}
 
 				button {
@@ -159,9 +217,17 @@ $wrap-content-full-width: 90%;
 					}
 
 					display: block;
-					margin: 45px auto;
+					margin: #{$mail-button-vertical-margin-sum/2} auto;
 					width: $header-content-width;
 					cursor: pointer;
+					
+					@media #{$smaller-phones} {
+						width: 100%;
+					}
+		
+					@media #{$tablets-and-big-phones} {
+						width: 100%;
+					}
 				}
 			}
 
@@ -173,6 +239,16 @@ $wrap-content-full-width: 90%;
 				position: absolute;
 				left: calc(50% - (#{$header-content-background-width / 2}));
 				z-index: $default-z-index + 1;
+				
+				@media #{$smaller-phones} {
+					width: 100%;
+					left: 0;
+				}
+				
+				@media #{$tablets-and-big-phones} {
+					width: 100%;
+					left: 0;
+				}
 			}
 
 			.afterFormStatement {
@@ -180,18 +256,71 @@ $wrap-content-full-width: 90%;
 				font-size: $biggest-font-size-for-paragraphs;
 				text-align: center;
 				margin: 67px 0;
+
+				@media #{$smaller-phones} {
+					display: none;
+				}
+				
+				@media #{$tablets-and-big-phones} {
+					display: none;
+				}
 			}
 		}
 	}
 
 	#post-header {
+		background: $lighter-dark-theme-color;
+
 		.wrap-content {
 			$offset-to-the-right: 25%;
+			$padding-in-responsive-vertical: 25px;
 
 			margin-left: $offset-to-the-right;
 			width: $wrap-content-full-width - $offset-to-the-right;
+			height: $header-content-overlap;
+			background: $lighter-dark-theme-color;
+			padding: 20px 0;
+			color: $lighter-dark-theme-foreground-color;
+			position: relative;
+
+			@media #{$smaller-phones} {
+				padding-top: $mail-button-vertical-margin-sum + 40px + $padding-in-responsive-vertical;
+				margin: 0 auto;
+				width: $wrap-content-full-width;
+				height: auto;
+				padding-bottom: $padding-in-responsive-vertical;
+			}
+			
+			@media #{$tablets-and-big-phones} {
+				padding-top: $mail-button-vertical-margin-sum + 40px + $padding-in-responsive-vertical;
+				margin: 0 auto;
+				width: $wrap-content-full-width;
+				height: auto;
+				padding-bottom: $padding-in-responsive-vertical;
+			}
+
 			p {
-				max-width: calc(70% - #{$header-content-background-width / 2});
+				@media #{$biggest-screens} {
+					max-width: calc(70% - #{$header-content-background-width / 2});
+				}
+
+				@media #{$almost-full-hd-screens} {
+					max-width: calc(77% - #{$header-content-background-width / 2});
+				}
+
+				@media #{$regular-screens} {
+					max-width: calc(85% - #{$header-content-background-width / 2});
+				}
+
+				@media #{$smaller-phones} {
+					margin-left: 0;
+					width: auto;
+				}
+				
+				@media #{$tablets-and-big-phones} {
+					margin-left: 0;
+					width: auto;
+				}
 				
 				&:nth-last-child(1) {
 					border: 0;
@@ -202,12 +331,6 @@ $wrap-content-full-width: 90%;
 				}
 			}
 		}
-
-		height: $header-content-overlap;
-		background: $lighter-dark-theme-color;
-		padding: 20px 0;
-		color: $lighter-dark-theme-foreground-color;
-		position: relative;
 
 		p {
 			margin: 0;
@@ -225,6 +348,14 @@ $wrap-content-full-width: 90%;
 			font-size: $biggest-font-size-for-paragraphs;
 			color: $foreground-color;
 			text-align: center;
+
+			@media #{$smaller-phones} {
+				display: none;
+			}
+			
+			@media #{$tablets-and-big-phones} {
+				display: none;
+			}
 		}
 	}
 
