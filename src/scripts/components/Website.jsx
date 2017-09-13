@@ -4,10 +4,13 @@ import PostHeader from './PostHeader';
 import ImageBlock from './ImageBlock';
 import ReferenceBlock from './ReferenceBlock';
 import Footer from './Footer';
+import Favicon from 'react-favicon';
+import favicon from '../../images/favicon.ico';
 
 export default class Website extends React.Component {
 	render() {
 		return <section id="main-content">
+			<Favicon url={favicon} />
 			<div className="side-line" />
 			<Header 
 				slogan="looking for urban"

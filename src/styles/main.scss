@@ -1,5 +1,6 @@
 @import "~normalize.css/normalize.css";
 @import "font-awesome/font-awesome.scss";
+@import "fonts.scss";
 @import "colors.scss";
 @import "mixins.scss";
 @import "media-queries-sizes";
@@ -23,18 +24,33 @@ $main-motive-border: 2px $main-theme-color dashed;
 $default-z-index: 1000;
 $wrap-content-full-width: 90%;
 
+
 #main-content {
 	
 	/*
 		COMMON STUFF
 	*/
 
-	font-family: "Open Sans", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	
+	p {
+		font-weight: 300;
+	}
+
+	::-moz-selection {
+		color: $foreground-color;
+		background: $main-theme-color;
+	}
+	
+	::selection {
+		color: $foreground-color; 
+		background: $main-theme-color;
+	}
 	
 	*,
 	*::before,
@@ -178,8 +194,8 @@ $wrap-content-full-width: 90%;
 				position: relative;
 
 				.description {
-					margin-top: $header-height / 6;
-					height:($header-height / 6) * 4;
+					margin-top: $header-height / 12;
+					height:($header-height / 12) * 9;
 					font-size: $bigger-font-size-for-paragraphs;
 
 					@media #{$smaller-phones} {

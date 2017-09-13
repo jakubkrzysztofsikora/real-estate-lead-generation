@@ -24,12 +24,12 @@ module.exports = {
                 loaders: ExtractTextPlugin.extract('css-loader!sass-loader')
 			},
 			{
-				test: /\.(jpe?g|png|gif)$/i,
+				test: /\.(jpe?g|png|gif|ico)$/i,
 				loaders: "file-loader?name=/dist/images/[name].[ext]"
 			},
 			{
 				test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
-				loader: 'file-loader?name=/dist/font-awesome/fonts/[name].[ext]'
+				loader: 'file-loader?name=/dist/styles/fonts/[name].[ext]'
 			}
         ]
 	},
