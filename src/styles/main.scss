@@ -283,6 +283,7 @@ $wrap-content-full-width: 90%;
 
 	#post-header {
 		background: $lighter-dark-theme-color;
+		position: relative;
 
 		.wrap-content {
 			$offset-to-the-right: 25%;
@@ -367,7 +368,7 @@ $wrap-content-full-width: 90%;
 			padding: 15px 5%;
 			width: 100%;
 			font-size: $biggest-font-size-for-paragraphs;
-			color: $foreground-color;
+			color: $main-theme-lighter-color;
 			text-align: center;
 
 			@media #{$smaller-phones} {
@@ -377,6 +378,11 @@ $wrap-content-full-width: 90%;
 			@media #{$tablets-and-big-phones} {
 				display: none;
 			}
+
+			& > *
+			{
+				vertical-align: middle;
+			} 
 		}
 	}
 
