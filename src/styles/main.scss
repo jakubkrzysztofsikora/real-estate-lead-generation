@@ -123,6 +123,10 @@ $wrap-content-full-width: 90%;
 			text-align: center;
 			height: $top-header-height;
 			border-bottom: 2px $foreground-color dashed;
+			background-color: $dark-theme-color-big-opacity;
+			-moz-box-shadow: 0 0 5px $dark-theme-color-opacity;
+			-webkit-box-shadow: 0 0 5px $dark-theme-color-opacity;
+			box-shadow: 0px 0px 20px $dark-theme-color-opacity;
 
 			img {
 				height: $top-header-height / 2;
