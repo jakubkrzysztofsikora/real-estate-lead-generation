@@ -7,7 +7,7 @@ export default class PostHeader extends React.Component {
 			<div className="wrap-content">
 				{this.props.slogans.map(slogan => <p key={slogan}>{slogan}</p>)}
 			</div>
-			<p className="bottom-post-header-slogan"><span>Visit today</span><FontAwesome className="paragraph-icon" name="angle-double-right" size='2x' /></p> 
+			<p className="bottom-post-header-slogan"><span>Let's start</span><FontAwesome className="paragraph-icon" name="angle-double-right" size='2x' /></p> 
 		</section>;
 	}
 }

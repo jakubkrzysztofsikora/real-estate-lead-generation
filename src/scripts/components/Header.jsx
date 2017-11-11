@@ -20,18 +20,7 @@ export default class Header extends React.Component {
 						<div className="lead-form-content">
 							<input type="text" placeholder="Your name" />
 							<input type="email" placeholder="Your email" />
-							<select>
-								<option disabled defaultValue>Prefered day of week</option>
-								<option value="0">Monday</option>
-								<option value="1">Thusday</option>
-								<option value="2">Wednesday</option>
-								<option value="3">Thursday</option>
-								<option value="4">Friday</option>
-								<option value="5">Saturday</option>
-								<option value="6">Sunday</option>
-							</select>
-							<input type="time" name="time" id="time" placeholder="Appointment time" />
-							<button>Book my visit</button>
+							<button>I'm ready!</button>
 							<p className="afterFormStatement">{this.props.afterFormStatement}</p>
 						</div>
 					</div>

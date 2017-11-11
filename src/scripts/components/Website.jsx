@@ -14,13 +14,13 @@ export default class Website extends React.Component {
 			<div className="side-line" />
 			<Header 
 				slogan="looking for urban"
-				captionPart1="Centrally located in Phoenix, we have represented buyers and sellers for both residential and commercial properties for over 10 years."
-				captionPart2="We have seen changes in the real estate market these past few years from Chandler to Phoenix and want to share our market knowledge with you."
+				captionPart1="If you are here, you are ready to experience the benefits of living in Central Phoenix."
+				captionPart2="If you are ready to explore the variety, diversity, and walkability of the city, fill out this form and we will start sending you all single story homes in your price range."
 				afterFormStatement="WE'LL GET IN TOUCH!" />
 			<PostHeader slogans={[
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-				'Suspendisse semper, magna eu sodales elementum, libero urna cursus ligula, quis fermentum lacus dolor at mi.',
-				'Nunc aliquam quam sed efficitur viverra.']} />
+				'Explore the variety.',
+				'Experience the benefits of living in Central Phoenix.',
+				'Explore the diversity.']} />
 			<ImageBlock title="Discover place" subtitle="make it your home" />
 			<ReferenceBlock />
 			<Footer />

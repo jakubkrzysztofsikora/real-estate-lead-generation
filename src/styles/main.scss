@@ -18,7 +18,7 @@ $header-content-background-width-small-screen: $header-content-width-small-scree
 $font-size-for-paragraphs: 20px;
 $bigger-font-size-for-paragraphs: 22px;
 $biggest-font-size-for-paragraphs: 26px;
-$mail-button-vertical-margin-sum: 100px;
+$mail-button-vertical-margin-sum: 236px;
 
 $main-motive-border: 2px $main-theme-color dashed;
 $default-z-index: 1000;
@@ -224,7 +224,7 @@ $wrap-content-full-width: 90%;
 				}
 
 				.lead-form-content {
-					padding-top: 15px;
+					padding-top: 60px;
 
 					@media (max-width: 850px) {
 						padding-top: 0;
@@ -254,6 +254,7 @@ $wrap-content-full-width: 90%;
 
 					display: block;
 					margin: #{$mail-button-vertical-margin-sum/2} auto;
+					margin-bottom: 0;
 					width: $header-content-width;
 					cursor: pointer;
 					
@@ -272,6 +273,7 @@ $wrap-content-full-width: 90%;
 		
 					@media #{$tablets-and-big-phones} {
 						width: 100%;
+						margin: #{$mail-button-vertical-margin-sum/6} auto;
 					}
 				}
 			}
@@ -302,7 +304,7 @@ $wrap-content-full-width: 90%;
 				color: $foreground-color;
 				font-size: $biggest-font-size-for-paragraphs;
 				text-align: center;
-				margin: 67px 0;
+				margin: 60px 0;
 
 				@media #{$smaller-phones} {
 					display: none;
@@ -332,7 +334,7 @@ $wrap-content-full-width: 90%;
 			position: relative;
 			
 			@media #{$tablets-and-big-phones} {
-				padding-top: $mail-button-vertical-margin-sum + 40px + $padding-in-responsive-vertical;
+				padding-top: $mail-button-vertical-margin-sum / 2;
 				margin: 0 auto;
 				width: $wrap-content-full-width;
 				height: auto;
@@ -340,7 +342,7 @@ $wrap-content-full-width: 90%;
 			}
 
 			@media #{$smaller-phones} {
-				padding-top: $mail-button-vertical-margin-sum;
+				padding-top: $mail-button-vertical-margin-sum / 2;
 				margin: 0 auto;
 				width: $wrap-content-full-width;
 				height: auto;
@@ -348,11 +350,10 @@ $wrap-content-full-width: 90%;
 			}
 			
 			@media #{$small-phones} {
-				padding-top: $mail-button-vertical-margin-sum * 2
 			}
 			
 			@media #{$smallest-phones} {
-				padding-top: $mail-button-vertical-margin-sum * 2.5;
+				padding-top: $mail-button-vertical-margin-sum;
 			}
 
 			p {
