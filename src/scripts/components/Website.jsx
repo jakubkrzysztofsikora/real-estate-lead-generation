@@ -13,7 +13,7 @@ export default class Website extends React.Component {
 			<Favicon url={favicon} />
 			<div className="side-line" />
 			<Header 
-				slogan="looking for urban"
+				slogan="Single Story Central Phoenix Homes"
 				captionPart1="If you are here, you are ready to experience the benefits of living in Central Phoenix."
 				captionPart2="If you are ready to explore the variety, diversity, and walkability of the city, fill out this form and we will start sending you all single story homes in your price range."
 				afterFormStatement="WE'LL GET IN TOUCH!" />
